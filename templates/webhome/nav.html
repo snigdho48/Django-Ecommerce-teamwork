@@ -33,7 +33,23 @@
                                 <option value="jp">Japan (JPY)</option>
                             </select>
                         </li>
+                        {% if user.is_authenticated %}
+
+                            <li><i class="biolife-icon icon-login m-0"></i>
+
+
+
+                            <a href="{% url 'logout' %}" class="login-link"><i class="biolife-icon icon-login"></i>{{ user.first_name }} Logout</a>
+
+
+
+
+                            </li>
+
+                        {% else %}
                         <li><a href="{% url 'login' %}" class="login-link"><i class="biolife-icon icon-login"></i>Login/Register</a></li>
+
+                        {% endif %} 
                     </ul>
                 </div>
             </div>
