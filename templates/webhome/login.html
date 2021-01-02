@@ -1,5 +1,8 @@
 {% extends "webhome/base.html" %}
 {% load static %}
+
+
+
 {% block content %}
 
     <!--Hero Section-->
@@ -28,19 +31,29 @@
                     <!--Form Sign In-->
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <div class="signin-container">
-                            <form action="#" name="frm-login" method="post">
+                            <form name="frm-login" method="post">
+                                {% csrf_token %}
+                                <br>
                                 <p class="form-row">
-                                    <label for="fid-name">Email Address:<span class="requite">*</span></label>
-                                    <input type="text" id="fid-name" name="name" value="" class="txt-input">
+                                    <label for="username"><span class="requite"></span></label>
+                                    <input type="text" id="username" name="username" placeholder="Email Address/Username" class="txt-input">
                                 </p>
+                                <br>
                                 <p class="form-row">
-                                    <label for="fid-pass">Password:<span class="requite">*</span></label>
-                                    <input type="email" id="fid-pass" name="email" value="" class="txt-input">
+                                    <label for="password"><span class="requite"></span></label>
+                                    <input type="password" id="password" name="password" placeholder="Password" class="pass-input">
                                 </p>
+                                <br>
                                 <p class="form-row wrap-btn">
                                     <button class="btn btn-submit btn-bold" type="submit">sign in</button>
-                                    <a href="#" class="link-to-help">Forgot your password</a>
                                 </p>
+                                    {% for message in messages %}
+                                    <div class="form-group" style="border-radius: 4px;background-color: #ff3d23;font-weight:bold;text-align: center; color:white;white-space: nowrap; padding: 6px 12px; font-size: 14px;" >
+                                      {{message}}
+
+                                    </div>
+
+                                    {% endfor %}
                             </form>
                         </div>
                     </div>
@@ -71,4 +84,3 @@
 
     </div>
 {% endblock %}
-

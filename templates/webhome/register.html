@@ -151,6 +151,14 @@
 		<div class="form-group">
             <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
         </div>
+        {% for message in messages %}
+            <div class="form-group" style="border-radius: 4px;background-color: #ff3d23;font-weight:bold;text-align: center; color:white;white-space: nowrap; padding: 6px 12px; font-size: 14px;" >
+                {{message}}
+
+            </div>
+
+        {% endfor %}
+
 
 
     </form>

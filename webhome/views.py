@@ -6,8 +6,7 @@ def index(request):
     return render(request, 'webhome/content.html')
 
 
-def login(request):
-    return render(request, 'webhome/login.html')
+
 
 
 
