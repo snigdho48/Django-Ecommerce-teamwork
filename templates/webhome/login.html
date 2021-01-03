@@ -1,6 +1,11 @@
 {% extends "webhome/base.html" %}
 {% load static %}
 
+{% block head %}
+  Login
+{% endblock %}
+
+
 
 
 {% block content %}
@@ -47,6 +52,10 @@
                                 <p class="form-row wrap-btn">
                                     <button class="btn btn-submit btn-bold" type="submit">sign in</button>
                                 </p>
+                                <p class="form-row wrap-btn">
+                                    <button class="btn btn-bold ml-0"><a href="{% url 'password_reset_form' %}" style="color:white" >Forgot Password?</a></button>
+
+                                </p>
                                     {% for message in messages %}
                                     <div class="form-group" style="border-radius: 4px;background-color: #ff3d23;font-weight:bold;text-align: center; color:white;white-space: nowrap; padding: 6px 12px; font-size: 14px;" >
                                       {{message}}
@@ -72,6 +81,7 @@
                                     <li>Save items to your Wishlist</li>
                                 </ul>
                                 <a href="{% url 'register' %}" class="btn btn-bold">Create an account</a>
+
                             </div>
                         </div>
                     </div>
